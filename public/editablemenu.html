@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Magical Meals</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="/assets/img/restaurant.png" rel="icon" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ... (head elements) ... -->
+    <script src="/components/ownernav.js"></script>
+    <script src="/components/footer.js"></script>
+    <script src="/components/loginmodal.js"></script>
+    <script src="/components/addItemModal.js"></script>
+  </head>
+  <body>
+    <div class="navbarwrapper"></div>
+    <section id="menu" class="menu">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <button class="btn btn-primary additembtn btn-lg">Add Item</button>
+        </div>
+
+        <ul
+          class="nav nav-tabs d-flex justify-content-center"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <li class="nav-item">
+            <a
+              class="nav-link active show"
+              data-bs-toggle="tab"
+              data-bs-target="#menu-north-indian"
+            >
+              <h4>North-Indian</h4>
+            </a>
+          </li>
+          <!-- End tab nav item -->
+
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              data-bs-toggle="tab"
+              data-bs-target="#menu-south-indian"
+            >
+              <h4>South-Indian</h4> </a
+            ><!-- End tab nav item -->
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              data-bs-toggle="tab"
+              data-bs-target="#menu-chinese"
+            >
+              <h4>Chinese</h4>
+            </a>
+          </li>
+          <!-- End tab nav item -->
+
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              data-bs-toggle="tab"
+              data-bs-target="#menu-drinks"
+            >
+              <h4>Drinks</h4>
+            </a>
+          </li>
+          <!-- End tab nav item -->
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              data-bs-toggle="tab"
+              data-bs-target="#menu-ice-cream"
+            >
+              <h4>Ice-Cream</h4>
+            </a>
+          </li>
+          <!-- End tab nav item -->
+        </ul>
+
+        <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
+          <div class="tab-pane fade active show menu-north-indian" id="menu-north-indian">
+            <div class="tab-header text-center">
+              <p>Menu</p>
+              <h3>North-Indian</h3>
+            </div>
+            <div class="row gy-5"></div>
+          </div>
+
+          <div class="tab-pane fade menu-south-indian" id="menu-south-indian">
+            <div class="tab-header text-center">
+              <p>Menu</p>
+              <h3>South-Indian</h3>
+            </div>
+
+            <div class="row gy-5"></div>
+          </div>
+
+          <div class="tab-pane fade menu-chinese" id="menu-chinese">
+            <div class="tab-header text-center">
+              <p>Menu</p>
+              <h3>Chinese</h3>
+            </div>
+
+            <div class="row gy-5"></div>
+          </div>
+
+          <div class="tab-pane fade menu-drinks" id="menu-drinks">
+            <div class="tab-header text-center">
+              <p>Menu</p>
+              <h3>Drinks</h3>
+            </div>
+
+            <div class="row gy-5"></div>
+          </div>
+
+          <div class="tab-pane fade menu-ice-cream" id="menu-ice-cream">
+            <div class="tab-header text-center">
+              <p>Menu</p>
+              <h3>Ice-Cream</h3>
+            </div>
+
+            <div class="row gy-5"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <form action="/menu/updateItemImage" style="display:none;" enctype="multipart/form-data" class="itemimageupdateform">
+      <input type="text" name="id" class="id" value="id">
+      <input type="text" name="category" class="category" value="category">
+      <input type="file" name="image" id="image" accept="image/">
+      <button type="submit">submit</button>
+    </form>
+
+    <div class="footerwrapper"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var navbarElement = document.querySelector(".navbarwrapper");
+        navbarElement.innerHTML = `
+          ${navbar()}
+          ${loginmodal()}
+          ${additemmodal()}
+      `;
+
+        var footerElement = document.querySelector(".footerwrapper");
+        footerElement.innerHTML = `
+          ${footer()}
+        `;
+      });
+    </script>
+    <link href="/assets/css/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/login.css" />
+    <link rel="stylesheet" href="/assets/css/menu.css" />
+    <link rel="stylesheet" href="/assets/css/ownernav.css" />
+    <link rel="stylesheet" href="/assets/css/footer.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/assets/js/owner.js"></script>
+    <script src="/assets/js/herobanner.js"></script>
+    <script src="/assets/js/editablemenu.js"></script>
+    
+  </body>
+</html>
